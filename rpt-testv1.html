@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rock, Paper, Scissors!</title>
+</head>
+<body>
+
+    
+
+<script>
+
+let computerScore = 0;
+let playerScore = 0;    
+
+function playGame(){
+    function computerPlay() {
+        let computerRandom = Math.floor((Math.random() * 3) + 1);
+            if(computerRandom === 1) {
+                return('rock')
+            } else if(computerRandom === 2) {
+                return('paper')
+            } else {
+                return('scissors')
+            }
+    }
+
+    let computerSelection = computerPlay();
+
+    function playerPlay() {
+        return prompt("Rock, paper, or scissors?").toLowerCase()
+    }
+
+    let playerSelection = playerPlay();
+
+    //round 1
+    function playRound(playerSelection, computerSelection) {
+        if(playerSelection == 'rock' && computerSelection == 'paper') {
+            computerScore++;
+            return "You lose to paper!";
+        } else if(playerSelection == 'rock' && computerSelection == 'scissors') {
+            playerScore++;
+            return "You beat scissors, you win!";
+        } else if(playerSelection == 'paper' && computerSelection == 'rock') {
+            playerScore++;
+            return "You beat rock and you won! Hell yeah!";
+        } else if(playerSelection == 'paper' && computerSelection == 'scissors') {
+            computerScore++;
+            return "You just lost to scissors, that sucks.";
+        } else if(playerSelection == 'scissors' && computerSelection == 'paper') {
+            playerScore++;
+            return "You just beat paper, wow you win!";
+        } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
+            computerScore++;
+            return "Aw you just lost to rock.";
+            } else {
+            return "You both chose the same, it\'s a tie!";
+        }
+    }
+    alert(playRound(playerSelection, computerSelection))
+    console.log(computerSelection);
+    alert("You: " + playerScore + " Computer: " + computerScore);
+
+    //round 2
+    playerSelection = playerPlay();
+    computerSelection = computerPlay();
+    playRound(playerSelection, computerPlay);
+    alert(playRound(playerSelection, computerSelection))
+    console.log(computerSelection);
+    alert("You: " + playerScore + " Computer: " + computerScore);
+
+    //round 3
+    playerSelection = playerPlay();
+    computerSelection = computerPlay();
+    playRound(playerSelection, computerPlay);
+    alert(playRound(playerSelection, computerSelection))
+    console.log(computerSelection);
+    alert("You: " + playerScore + " Computer: " + computerScore);
+
+    //round 4
+    playerSelection = playerPlay();
+    computerSelection = computerPlay();
+    playRound(playerSelection, computerPlay);
+    alert(playRound(playerSelection, computerSelection))
+    console.log(computerSelection);
+    alert("You: " + playerScore + " Computer: " + computerScore);
+
+    //round 5
+    playerSelection = playerPlay();
+    computerSelection = computerPlay();
+    playRound(playerSelection, computerPlay);
+    alert(playRound(playerSelection, computerSelection))
+    console.log(computerSelection);
+    alert("You: " + playerScore + " Computer: " + computerScore);
+}
+
+playGame();
+
+
+//round one
+//alert(playRound(playerSelection, computerSelection));
+//console.log(computerSelection);
+//console.log(playerSelection);
+//console.log(computerScore, playerScore);
+
+
+function result() {
+    if(computerScore > playerScore) {
+        return("computer wins!");
+    } else if(computerScore < playerScore) {
+        return("player wins!");
+    } else {
+        return("looks like a tie!");
+    }
+}
+
+alert(result());
+
+
+//alert("Your score is: " +playerScore +" Computer score is: " +computerScore);
+
+
+</script>
+
+
+
+</body>
+</html>
